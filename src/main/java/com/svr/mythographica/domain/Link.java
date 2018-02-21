@@ -18,8 +18,7 @@ public class Link {
     @Enumerated(EnumType.STRING)
     private LinkType type;
 
-    public Link(){
-    }
+    public Link(){}
 
     public Link(long startNodeId, long endNode){
         this.startNodeId = startNodeId;

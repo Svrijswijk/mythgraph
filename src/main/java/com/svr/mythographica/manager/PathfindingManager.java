@@ -27,13 +27,10 @@ public class PathfindingManager {
 
     //Check for each link of a node if it connects to the endNode
     public boolean checkNode(PathNode firstNode, PathNode secondNode) {
-        if (firstNode.getNode() == secondNode.getNode()) {
-            return true;
-        }
-        return false;
+        return firstNode.getNode().equals(secondNode.getNode());
     }
 
-    public double calculatePriority(Node localNode, PathNode currentNode, PathNode endNode, Link connection) {
+    private double calculatePriority(Node localNode, PathNode currentNode, PathNode endNode, Link connection) {
         double startPriority = currentNode.getPriority();
         double priority = 1.0;
 
