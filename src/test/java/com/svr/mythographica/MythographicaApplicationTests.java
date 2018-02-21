@@ -1,4 +1,4 @@
-package com.svr.graphex;
+package com.svr.mythographica;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MythgraphApplicationTests {
+public class MythographicaApplicationTests {
 
 	@Test
 	public void contextLoads() {
