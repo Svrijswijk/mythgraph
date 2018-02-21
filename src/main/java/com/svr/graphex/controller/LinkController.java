@@ -19,12 +19,12 @@ public class LinkController {
 
     @RequestMapping(method = RequestMethod.GET)
     public Iterable<Link> getLinks(){
-        return linkManager.getConnections();
+        return linkManager.getLink();
     }
 
-    @RequestMapping(value = "{connectionNumber}", method = RequestMethod.GET)
-    public Link getLink(@PathVariable long connectionNumber){
-        return linkManager.getConnection(connectionNumber);
+    @RequestMapping(value = "{linkNumber}", method = RequestMethod.GET)
+    public Link getLink(@PathVariable long linkNumber){
+        return linkManager.getLink(linkNumber);
     }
 
     @RequestMapping(value = "/start/{nodeNumber}", method = RequestMethod.GET)
@@ -43,17 +43,17 @@ public class LinkController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public void insert(@RequestBody Link connection){
-        linkManager.insert(connection);
+    public void insert(@RequestBody Link link){
+        linkManager.insert(link);
     }
 
-    @RequestMapping(value = "{connectionNumber}", method = RequestMethod.PUT)
-    public void update(@PathVariable long connectionNumber, @RequestBody Link connection){
-        linkManager.update(connectionNumber, connection);
+    @RequestMapping(value = "{linkNumber}", method = RequestMethod.PUT)
+    public void update(@PathVariable long linkNumber, @RequestBody Link link){
+        linkManager.update(linkNumber, link);
     }
 
-    @RequestMapping(value = "{connectionNumber}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable long connectionNumber) {
-        linkManager.remove(connectionNumber);
+    @RequestMapping(value = "{linkNumber}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable long linkNumber) {
+        linkManager.remove(linkNumber);
     }
 }

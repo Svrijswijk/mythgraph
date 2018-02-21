@@ -23,7 +23,7 @@ public class NodeController {
     }
 
     @RequestMapping(value = "{nodeNumber}", method = RequestMethod.GET)
-    public Node getGraphNode(@PathVariable long nodeNumber){
+    public Node getNode(@PathVariable long nodeNumber){
         return nodeManager.findNode(nodeNumber);
     }
 

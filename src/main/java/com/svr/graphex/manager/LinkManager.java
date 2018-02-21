@@ -20,19 +20,19 @@ public class LinkManager {
         this.linkRepository = linkRepository;
     }
 
-    public Iterable<Link> getConnections(){
+    public Iterable<Link> getLink(){
         return linkRepository.findAll();
     }
 
-    public Link getConnection(long id) {
+    public Link getLink(long id) {
         Link link = linkRepository.findOne(id);
         if (link == null)
             throw new NotFoundException();
         return link;
     }
 
-    public void delete(long connectionNumber) {
-        linkRepository.delete(connectionNumber);
+    public void delete(long linkNumber) {
+        linkRepository.delete(linkNumber);
     }
 
     public Link insert(Link link) {
@@ -52,11 +52,11 @@ public class LinkManager {
     }
 
     public Iterable<Link> findByStartNodeNodeNumber(long id){
-        Iterable<Link> connections = linkRepository.findByStartNodeId(id);
-        if(connections == null){
+        Iterable<Link> links = linkRepository.findByStartNodeId(id);
+        if(links == null){
             throw new NotFoundException();
         }
-        return connections;
+        return links;
     }
 
     public Iterable<Link> findByEndNodeNodeNumber(long id){

@@ -3,6 +3,7 @@ package com.svr.graphex.domain;
 import com.svr.graphex.enums.LinkType;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Link {
@@ -11,8 +12,10 @@ public class Link {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @ManyToOne
+    @NotNull
     private Node startNode;
     @ManyToOne
+    @NotNull
     private Node endNode;
     @Enumerated(EnumType.STRING)
     private LinkType type;

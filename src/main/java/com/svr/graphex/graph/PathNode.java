@@ -16,9 +16,9 @@ public class PathNode {
     private List linkList = new ArrayList<Link>();
     private double priority;
 
-    public PathNode(Node graphNode, PathNode parentNode, Link parentLink) {
-        this.node = graphNode;
-        this.id = graphNode.getId();
+    public PathNode(Node node, PathNode parentNode, Link parentLink) {
+        this.node = node;
+        this.id = node.getId();
 
         this.parentLink = parentLink;
 
@@ -42,7 +42,7 @@ public class PathNode {
     }
 
     public void setLinkList(List linkList) {
-        //System.out.println("connectionlist: " + linkList);
+        //System.out.println("linkList: " + linkList);
         this.linkList = linkList;
     }
 

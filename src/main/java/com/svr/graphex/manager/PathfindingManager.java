@@ -13,7 +13,7 @@ import java.util.*;
 public class PathfindingManager {
 
     //Weight of search variables
-    private final double CONNECTION_WEIGHT = 1;
+    private final double LINK_WEIGHT = 1;
 
     private final LinkManager linkManager;
     private final NodeManager nodeManager;
@@ -25,7 +25,7 @@ public class PathfindingManager {
         this.linkManager = linkManager;
     }
 
-    //Check for each connection of a node if it connects to the endNode
+    //Check for each link of a node if it connects to the endNode
     public boolean checkNode(PathNode firstNode, PathNode secondNode) {
         if (firstNode.getNode() == secondNode.getNode()) {
             return true;
@@ -37,7 +37,7 @@ public class PathfindingManager {
         double startPriority = currentNode.getPriority();
         double priority = 1.0;
 
-//        switch (connection.getType()) {
+//        switch (link.getType()) {
 //            case CHILD:
 //                priority += 1 * CONNECTION_WEIGHT;
 //                break;
@@ -65,7 +65,7 @@ public class PathfindingManager {
         return startPriority + priority;
     }
 
-    //Find a parh between two of the GraphNodes
+    //Find a path between two of the Nodes
     public List<Link> findPath(long startId, long endId) {
         Queue<PathNode> nodeQueue = new PriorityQueue<>(priorityComparator);
         Map<Long, PathNode> pastNodes = new HashMap<>();
