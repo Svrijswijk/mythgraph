@@ -1,4 +1,4 @@
-package com.svr.graphex;
+package com.svr.mythographica;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

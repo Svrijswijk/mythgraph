@@ -1,4 +1,4 @@
-package com.svr.graphex.graph;
+package com.svr.mythographica.graph;
 
 import java.util.ArrayList;
 import java.util.List;

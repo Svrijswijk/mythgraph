@@ -1,6 +1,6 @@
-package com.svr.graphex.domain;
+package com.svr.mythographica.domain;
 
-import com.svr.graphex.enums.LinkType;
+import com.svr.mythographica.enums.LinkType;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

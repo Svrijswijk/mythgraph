@@ -1,7 +1,7 @@
-package com.svr.graphex.graph;
+package com.svr.mythographica.graph;
 
-import com.svr.graphex.domain.Link;
-import com.svr.graphex.domain.Node;
+import com.svr.mythographica.domain.Link;
+import com.svr.mythographica.domain.Node;
 
 import java.util.ArrayList;
 import java.util.List;

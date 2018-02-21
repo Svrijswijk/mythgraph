@@ -1,9 +1,9 @@
-package com.svr.graphex.manager;
+package com.svr.mythographica.manager;
 
-import com.svr.graphex.domain.Node;
-import com.svr.graphex.exception.NotFoundException;
-import com.svr.graphex.repository.LinkRepository;
-import com.svr.graphex.repository.NodeRepository;
+import com.svr.mythographica.domain.Node;
+import com.svr.mythographica.exception.NotFoundException;
+import com.svr.mythographica.repository.LinkRepository;
+import com.svr.mythographica.repository.NodeRepository;
 import org.springframework.stereotype.Component;
 
 @Component

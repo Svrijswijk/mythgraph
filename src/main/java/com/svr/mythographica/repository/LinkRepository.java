@@ -1,6 +1,6 @@
-package com.svr.graphex.repository;
+package com.svr.mythographica.repository;
 
-import com.svr.graphex.domain.Link;
+import com.svr.mythographica.domain.Link;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

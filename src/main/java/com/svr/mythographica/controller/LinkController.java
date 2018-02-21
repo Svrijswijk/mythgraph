@@ -1,7 +1,7 @@
-package com.svr.graphex.controller;
+package com.svr.mythographica.controller;
 
-import com.svr.graphex.domain.Link;
-import com.svr.graphex.manager.LinkManager;
+import com.svr.mythographica.domain.Link;
+import com.svr.mythographica.manager.LinkManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,10 +1,10 @@
-package com.svr.graphex.manager;
+package com.svr.mythographica.manager;
 
-import com.svr.graphex.comparator.PriorityComparator;
-import com.svr.graphex.domain.Link;
-import com.svr.graphex.domain.Node;
-import com.svr.graphex.graph.GraphHelper;
-import com.svr.graphex.graph.PathNode;
+import com.svr.mythographica.comparator.PriorityComparator;
+import com.svr.mythographica.domain.Link;
+import com.svr.mythographica.domain.Node;
+import com.svr.mythographica.graph.GraphHelper;
+import com.svr.mythographica.graph.PathNode;
 import org.springframework.stereotype.Component;
 
 import java.util.*;

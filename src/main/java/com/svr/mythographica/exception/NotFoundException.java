@@ -1,4 +1,4 @@
-package com.svr.graphex.exception;
+package com.svr.mythographica.exception;
 
 public class NotFoundException extends RuntimeException{
 }

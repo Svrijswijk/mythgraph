@@ -1,4 +1,4 @@
-package com.svr.graphex;
+package com.svr.mythographica;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

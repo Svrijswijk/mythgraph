@@ -1,7 +1,7 @@
-package com.svr.graphex.controller;
+package com.svr.mythographica.controller;
 
-import com.svr.graphex.domain.Node;
-import com.svr.graphex.manager.NodeManager;
+import com.svr.mythographica.domain.Node;
+import com.svr.mythographica.manager.NodeManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
