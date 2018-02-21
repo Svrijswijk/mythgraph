@@ -1,9 +1,8 @@
 package com.svr.graphex.manager;
 
-import com.svr.graphex.domain.GraphConnection;
-import com.svr.graphex.domain.GraphNode;
+import com.svr.graphex.domain.Node;
 import com.svr.graphex.exception.NotFoundException;
-import com.svr.graphex.repository.ConnectionRepository;
+import com.svr.graphex.repository.LinkRepository;
 import com.svr.graphex.repository.NodeRepository;
 import org.springframework.stereotype.Component;
 
@@ -11,18 +10,20 @@ import org.springframework.stereotype.Component;
 public class NodeManager {
 
     private final NodeRepository nodeRepository;
-    private final ConnectionRepository connectionRepository;
+    private final LinkRepository linkRepository;
 
-    public NodeManager(NodeRepository nodeRepository, ConnectionRepository connectionRepository){
+    public NodeManager(NodeRepository nodeRepository, LinkRepository linkRepository){
         this.nodeRepository = nodeRepository;
-        this.connectionRepository = connectionRepository;
+        this.linkRepository = linkRepository;
     }
 
-    public GraphNode insert(GraphNode graphNode){
-        return nodeRepository.save(graphNode);
+    public Node insert(Node node){
+        //return nodeRepository.save(new Node("Chronos", NodeType.TITAN));
+        System.out.println(node);
+        return nodeRepository.save(node);
     }
 
-    public Iterable<GraphNode> getGraph(){
+    public Iterable<Node> getGraph(){
         return nodeRepository.findAll();
     }
 
@@ -30,26 +31,26 @@ public class NodeManager {
         nodeRepository.delete(nodeNumber);
     }
 
-    public GraphNode update(long nodeNumber, GraphNode graphNode) {
+    public Node update(long nodeNumber, Node node) {
         if (!nodeRepository.exists(nodeNumber)) throw new NotFoundException();
-        GraphNode updateGraphNode = nodeRepository.findOne(nodeNumber);
-        //updateGraphNode.setProperty(graphNode.getProperty());
-        return nodeRepository.save(updateGraphNode);
+        Node updateNode = nodeRepository.findOne(nodeNumber);
+        //updateNode.setProperty(node.getProperty());
+        return nodeRepository.save(updateNode);
     }
 
     // Find a node using the node ID as input
-    public GraphNode findNode(long id) {
-        GraphNode graphNode = nodeRepository.findOne(id);
-        if (graphNode == null)
+    public Node findNode(long id) {
+        Node node = nodeRepository.findOne(id);
+        if (node == null)
             throw new NotFoundException();
-        return graphNode;
+        return node;
     }
 
     public long findByName(String name){
-        GraphNode node = nodeRepository.findByName(name);
+        Node node = nodeRepository.findByName(name);
         if(node == null){
             return -1;
         }
-        return node.getNodeNumber();
+        return node.getId();
     }
 }
