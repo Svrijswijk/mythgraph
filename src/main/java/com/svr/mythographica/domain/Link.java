@@ -11,33 +11,31 @@ public class Link {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @ManyToOne
     @NotNull
-    private Node startNode;
-    @ManyToOne
+    private long startNodeId;
     @NotNull
-    private Node endNode;
+    private long endNodeId;
     @Enumerated(EnumType.STRING)
     private LinkType type;
 
     public Link(){
     }
 
-    public Link(Node startNode, Node endNode){
-        this.startNode = startNode;
-        this.endNode = endNode;
+    public Link(long startNodeId, long endNode){
+        this.startNodeId = startNodeId;
+        this.endNodeId = endNode;
     }
 
     public long getId() {
         return id;
     }
 
-    public Node getStartNode() {
-        return startNode;
+    public long getStartNodeId() {
+        return startNodeId;
     }
 
-    public Node getEndNode() {
-        return endNode;
+    public long getEndNodeId() {
+        return endNodeId;
     }
 
     public LinkType getType() {
@@ -46,7 +44,7 @@ public class Link {
 
     @Override
     public String toString() {
-        return startNode.getName() + " -> " + endNode.getName();
+        return this.startNodeId + " -> " + this.endNodeId;
     }
 
     @Override

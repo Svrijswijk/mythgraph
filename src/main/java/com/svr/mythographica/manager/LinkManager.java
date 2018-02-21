@@ -41,8 +41,8 @@ public class LinkManager {
             throw new NotFoundException();
         }
 
-        Node startNode = nodeRepository.findOne(link.getStartNode().getId());
-        Node endNode = nodeRepository.findOne(link.getEndNode().getId());
+        Node startNode = nodeRepository.findOne(link.getStartNodeId());
+        Node endNode = nodeRepository.findOne(link.getEndNodeId());
         if(startNode == null || endNode == null) {
             System.out.println("One of the nodes is null");
             throw new NotFoundException();
@@ -86,8 +86,8 @@ public class LinkManager {
         Link foundLink = linkRepository.findOne(id);
         if(foundLink == null) throw new NotFoundException();
 
-        Node startNode = nodeRepository.findOne(link.getStartNode().getId());
-        Node endNode = nodeRepository.findOne(link.getEndNode().getId());
+        Node startNode = nodeRepository.findOne(link.getStartNodeId());
+        Node endNode = nodeRepository.findOne(link.getEndNodeId());
         if(startNode == null || endNode == null) {
             System.out.println("One of the nodes is null");
             throw new NotFoundException();

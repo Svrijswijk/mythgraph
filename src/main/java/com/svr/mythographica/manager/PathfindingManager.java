@@ -93,10 +93,10 @@ public class PathfindingManager {
                 }
 
                 //Check if the currentNode is the start- or the endNode of the link
-                if (currentNode.getNode() == link.getStartNode()) {
-                    templateNode = link.getEndNode();
+                if (currentNode.getNode().getId() == link.getStartNodeId()) {
+                    templateNode = nodeManager.findNode(link.getEndNodeId());
                 } else {
-                    templateNode = link.getStartNode();
+                    templateNode = nodeManager.findNode(link.getStartNodeId());
                 }
 
                 double calculatedPriority = calculatePriority(templateNode, currentNode, endNode, link);
