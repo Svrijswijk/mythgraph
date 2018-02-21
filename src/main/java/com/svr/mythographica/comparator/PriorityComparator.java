@@ -1,5 +1,5 @@
-package com.svr.graphex.comparator;
-import com.svr.graphex.graph.PathNode;
+package com.svr.mythographica.comparator;
+import com.svr.mythographica.graph.PathNode;
 
 import java.util.Comparator;
 
