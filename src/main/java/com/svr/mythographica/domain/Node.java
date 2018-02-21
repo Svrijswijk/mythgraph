@@ -19,8 +19,7 @@ public class Node {
     private NodeType type;
 
 
-    public Node(){
-    }
+    public Node(){}
 
     public Node(String name, NodeType type){
         this.name = name;

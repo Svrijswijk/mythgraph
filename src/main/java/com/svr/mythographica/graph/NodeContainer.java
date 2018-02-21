@@ -6,21 +6,18 @@ import com.svr.mythographica.domain.Node;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PathNode {
+public class NodeContainer {
 
     private final Node node;
-    private PathNode parentNode;
-    private Link parentLink;
-    private long id;
+    private NodeContainer parentNode;
+    private Link link;
 
     private List linkList = new ArrayList<Link>();
     private double priority;
 
-    public PathNode(Node node, PathNode parentNode, Link parentLink) {
+    public NodeContainer(Node node, NodeContainer parentNode, Link link) {
         this.node = node;
-        this.id = node.getId();
-
-        this.parentLink = parentLink;
+        this.link = link;
 
         if (parentNode != null) {
             this.parentNode = parentNode;
@@ -28,9 +25,8 @@ public class PathNode {
         }
     }
 
-    public PathNode(Node node) {
+    public NodeContainer(Node node) {
         this.node = node;
-        this.id = node.getId();
     }
 
     public Node getNode() {
@@ -54,24 +50,20 @@ public class PathNode {
         this.priority = priority;
     }
 
-    public Link getParentLink() {
-        return parentLink;
+    public Link getLink() {
+        return link;
     }
 
-    public void setParentLink(Link parentLink) {
-        this.parentLink = parentLink;
+    public void setLink(Link link) {
+        this.link = link;
     }
 
-    public PathNode getParentNode() {
+    public NodeContainer getParentNode() {
         return parentNode;
     }
 
-    public void setParentNode(PathNode parentNode) {
+    public void setParentNode(NodeContainer parentNode) {
         this.parentNode = parentNode;
-    }
-
-    public long getId() {
-        return id;
     }
 
     @Override
@@ -84,13 +76,13 @@ public class PathNode {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        PathNode pathNode = (PathNode) o;
+        NodeContainer nodeContainer = (NodeContainer) o;
 
-        return id == pathNode.id;
+        return node != null ? node.equals(nodeContainer.node) : nodeContainer.node == null;
     }
 
     @Override
     public int hashCode() {
-        return (int) (id ^ (id >>> 32));
+        return node != null ? node.hashCode() : 0;
     }
 }
